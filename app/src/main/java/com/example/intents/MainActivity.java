@@ -30,9 +30,8 @@ public class MainActivity extends AppCompatActivity {
         btnIT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String url = editTextPrm.toString();
+                String url = editTextPrm.getText().toString();
                 if (!url.startsWith("http:" +"//") && !url.startsWith("https://")) url = "http://" + url;
-                Log.v("URL", url);
                 Intent intent = new Intent(Intent.ACTION_VIEW).setData(Uri.parse(url));
                 startActivity(intent);
 
